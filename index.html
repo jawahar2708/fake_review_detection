@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake Review Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🛒 Fake Review Detection System</h1>
+        <form method="POST">
+            <label for="review">Enter Review Text:</label><br>
+            <textarea id="review" name="review" rows="6" placeholder="Type or paste review text..." required></textarea><br>
+
+            <label for="algorithm">Choose Algorithm:</label><br>
+            <select id="algorithm" name="algorithm">
+                <option value="logistic">Logistic Regression</option>
+                <option value="rf">Random Forest</option>
+                <option value="nb">Naive Bayes</option>
+                <option value="xgb">XGBoost</option>
+                <option value="svm">Support Vector Machine (SVM)</option>
+                
+            </select><br>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <h3>Prediction Result: <span>{{ result }}</span></h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
