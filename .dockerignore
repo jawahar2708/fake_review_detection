@@ -1,0 +1,5 @@
+notebooks/
+docs/
+*.pyc
+.git
+__pycache__/
